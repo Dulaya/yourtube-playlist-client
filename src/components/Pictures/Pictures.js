@@ -72,8 +72,13 @@ const Pictures = () => {
                     </Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link onClick={() => openInNewTab('https://github.com/dulaya')} >
-                        Repository
+                    <Nav.Link onClick={() => openInNewTab('https://github.com/Dulaya/yourtube-playlist-client')} >
+                        Front-End Repo
+                    </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link onClick={() => openInNewTab('https://github.com/Dulaya/yourtube-playlist-server')} >
+                        Back-End Repo
                     </Nav.Link>
                 </Nav.Item>
             </Nav>
