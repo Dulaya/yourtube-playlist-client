@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import YouTube from 'react-youtube';
 
 import { ListGroup, Button, Image, Spinner } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { videoURL } from '../../urls/urls';
 
 import VideoContext from '../../context/VideoContext';
 import PictureContext from '../../context/PictureContext';
@@ -13,13 +14,11 @@ import { deleteVideo } from '../../actions/videos';
 
 const Videos = () => {
 
-    const url = 'https://your-tube-playlist.herokuapp.com/videos';
-
     const { videos, updateVideos } = useContext(VideoContext);
 
     const { pictures } = useContext(PictureContext);
 
-    var [{ data, loading, error }, ] = useAxios(url);
+    var [{ data, loading, error }, ] = useAxios(videoURL);
 
     //Accepts YouTube link and return YouTube id
     //i.e. https://www.youtube.com/watch?v=HueLPmIGtxA --> HueLPmIGtxA

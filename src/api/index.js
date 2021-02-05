@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const url = 'https://your-tube-playlist.herokuapp.com/posts';
-const videoURL = 'https://your-tube-playlist.herokuapp.com/videos';
+import { pictureURL, videoURL } from '../urls/urls'; 
 
-export const fetchPosts = () => axios.get(url);
-export const createPost = (newPost) => axios.post(url, newPost);
-export const likePost = (id) => axios.patch(`${url}/${id}/likePost`);
-export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
-export const deletePost = (id) => axios.delete(`${url}/${id}`);
+
+export const fetchPosts = () => axios.get();
+export const createPost = (newPost) => axios.post(pictureURL, newPost);
+export const likePost = (id) => axios.patch(`${pictureURL}/${id}/likePost`);
+export const updatePost = (id, updatedPost) => axios.patch(`${pictureURL}/${id}`, updatedPost);
+export const deletePost = (id) => axios.delete(`${pictureURL}/${id}`);
 
 
 

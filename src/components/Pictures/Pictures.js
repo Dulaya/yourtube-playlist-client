@@ -10,6 +10,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import { IoHome } from 'react-icons/io5';
 
+import { pictureURL } from '../../urls/urls';
+
+import Loader from '../Loader/Loader';
 import PictureForm from '../Form/Form';
 import VideoForm from '../Form/Video';
 import Videos from '../Videos/Videos';
@@ -17,7 +20,7 @@ import Videos from '../Videos/Videos';
 import PictureContext from '../../context/PictureContext';
 
 import { deletePost } from '../../actions/posts';
-
+ 
 const useStyles = makeStyles({
     root: {
         //maxWidth: 250,
@@ -35,11 +38,9 @@ const Pictures = () => {
 
     const classes = useStyles();
 
-    const url = 'https://your-tube-playlist.herokuapp.com/posts';
+    const [{ loading, error },] = useAxios(pictureURL);
 
-    const [{ loading, error },] = useAxios(url);
-
-    if (loading) return <Spinner animation="border" role="status" style={{ textAlign: 'center' }} />;
+    if (loading) return <Loader />;
     if (error) return <p>Error!</p>;
 
     //Delete picture in the DOM based on ... & delete from database.
@@ -58,8 +59,8 @@ const Pictures = () => {
     }
 
     //Open New Tab
-    const openInNewTab = (url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    const openInNewTab = (pictureURL) => {
+        const newWindow = window.open(pictureURL, '_blank', 'noopener,noreferrer');
         if (newWindow) newWindow.opener = null;
     }
 

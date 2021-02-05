@@ -27,13 +27,6 @@ const VideoForm = () => {
                 videoDescription: document.getElementById('videoDescription').value,
             }])
 
-            /*setVideoData({ 
-                 ...videoData, 
-                 title: 'HFDFDF',//window.location.pathname.replace('/', ''),
-                 videoLink: 'hhsfgsg',//'https://www.youtube.com/watch?v=APgbyPdoncM',
-                 videoDescription: 'fdadf',
-             });*/
-
             setVideoData([...videoData, {
                 _id: uniqueId,
                 id: uniqueId,
@@ -78,7 +71,6 @@ const VideoForm = () => {
                             margin: '1%',
                             width: '30%',
                         }}
-                        //onChange={(e) => setVideoData([ ...videoData, { videoDescription: e.target.value} ])}
                         placeholder='Description'
                         id='videoDescription'
                     />
