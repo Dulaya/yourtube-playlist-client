@@ -13,6 +13,7 @@ import { IoHome } from 'react-icons/io5';
 import { pictureURL } from '../../urls/urls';
 
 import Loader from '../Loader/Loader';
+import LandingPage from '../LandingPage/LandingPage';
 import PictureForm from '../Form/Form';
 import VideoForm from '../Form/Video';
 import Videos from '../Videos/Videos';
@@ -20,7 +21,7 @@ import Videos from '../Videos/Videos';
 import PictureContext from '../../context/PictureContext';
 
 import { deletePost } from '../../actions/posts';
- 
+
 const useStyles = makeStyles({
     root: {
         //maxWidth: 250,
@@ -40,7 +41,7 @@ const Pictures = () => {
 
     const [{ loading, error },] = useAxios(pictureURL);
 
-    if (loading) return <Loader />;
+    if (loading) return <LandingPage />    /*<Loader />*/;
     if (error) return <p>Error!</p>;
 
     //Delete picture in the DOM based on ... & delete from database.

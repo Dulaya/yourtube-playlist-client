@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { pictureURL, videoURL } from './urls/urls';
-
 import Pictures from './components/Pictures/Pictures';
 import VideoeContext from './context/VideoContext';
 import PictureContext from './context/PictureContext';
+
+import LandingPage from './components/LandingPage/LandingPage';
+
+const getWidth = () => window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
 
 const App = () => {
 
