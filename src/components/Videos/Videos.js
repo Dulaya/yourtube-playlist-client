@@ -1,11 +1,8 @@
 import React, { useState, useContext } from 'react';
-import useAxios from 'axios-hooks';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import YouTube from 'react-youtube';
 
-import { ListGroup, Button, Image, Spinner } from 'react-bootstrap';
-
-import { videoURL } from '../../urls/urls';
+import { ListGroup, Button, Image } from 'react-bootstrap';
 
 import VideoContext from '../../context/VideoContext';
 import PictureContext from '../../context/PictureContext';
@@ -17,8 +14,6 @@ const Videos = () => {
     const { videos, updateVideos } = useContext(VideoContext);
 
     const { pictures } = useContext(PictureContext);
-
-    var [{ data, loading, error }, ] = useAxios(videoURL);
 
     //Accepts YouTube link and return YouTube id
     //i.e. https://www.youtube.com/watch?v=HueLPmIGtxA --> HueLPmIGtxA
@@ -48,17 +43,14 @@ const Videos = () => {
     //Get picture of specified playlist
     var pictureOfPlaylist = pictures.filter(pic => pic.title === window.location.pathname.replace('/', ''))[0].selectedFile;
 
-    if (loading) return <><Spinner animation="border" /></>;
-    if (error) return <p>Error!</p>;
-
     //Set youTubeId as first video of database
-    if (data.length > 0) {
-        youTubeId = getYouTubeId(data[0].videoLink);
+    if (videos.length > 0) {
+        youTubeId = getYouTubeId(videos[0].videoLink);
 
         //Check if video title matches URL, if so get the first video to be displayed
-        for (var j = 0; j < data.length; j++) {
-            if (data[j].title === window.location.pathname.replace('/', '')) {
-                youTubeId = getYouTubeId(data[j].videoLink);
+        for (var j = 0; j < videos.length; j++) {
+            if (videos[j].title === window.location.pathname.replace('/', '')) {
+                youTubeId = getYouTubeId(videos[j].videoLink);
                 break;
             }
         }
