@@ -41,7 +41,7 @@ const Pictures = () => {
     const [{ loading, error },] = useAxios(pictureURL);
 
     if (loading) return <LandingPage />    /*<Loader />*/;
-    if (error) return <p>Error!</p>;
+    //if (error) return <p>Error!</p>;
 
     //Delete picture in the DOM based on ... & delete from database.
     const deletePicture = (pictureId) => {

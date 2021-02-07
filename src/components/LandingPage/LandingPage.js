@@ -3,9 +3,6 @@ import { Spinner } from 'react-bootstrap';
 
 const LandingPage = () => {
 
-    console.log(window.innerWidth, window.innerHeight)
-
-
     return (
         <>
             <Spinner />
