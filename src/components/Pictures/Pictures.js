@@ -7,7 +7,6 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
-import { IoHome } from 'react-icons/io5';
 
 import LandingPage from '../LandingPage/LandingPage';
 import PictureForm from '../Form/Form';
@@ -59,32 +58,12 @@ const Pictures = () => {
     return (
         <>
             {!pictures ? <LandingPage /> : <Router >
-                <Nav className="justify-content-center" style={{ fontSize: '2rem', }}>
-                    <Nav.Item >
-                        <Link to='/'>
-                            <IoHome style={{ verticalAlign: 'bottom' }} />
-                        </Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link onClick={() => openInNewTab('https://github.com/Dulaya/yourtube-playlist-client')} >
-                            Front-End Repo
-                    </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link onClick={() => openInNewTab('https://github.com/Dulaya/yourtube-playlist-server')} >
-                            Back-End Repo
-                    </Nav.Link>
-                    </Nav.Item>
-                </Nav>
-
-                <Navbar className="justify-content-center">
-                    <Nav className="justify-content-center" style={{
-                        fontSize: '1rem'
-                    }}>
-                        <Nav.Item >
-                            <Nav.Link onClick={() => openInNewTab('https://dulayasaennok.com')} >
-                                Made with MERN by Dulaya Saennok
-                        </Nav.Link>
+                <Navbar style={{background: '#dc3545', }}>
+                    <Nav className="justify-content-center" style={{ fontSize: '1.5rem', }}>
+                        <Nav.Item style={{color: 'white', }} >
+                            <Link to='/' style={{color: 'white', }}> 
+                                YourTube Playlist
+                            </Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar>
@@ -135,11 +114,25 @@ const Pictures = () => {
                                             onClick={() => { deletePicture(picture.id) }}
                                             variant="danger"
                                             style={{
-                                                width: '100%',
+                                                position: 'relative',
+                                                bottom: '25px',
+                                                padding: '5px'
                                             }}
                                         >
                                             Delete
-                                    </Button>
+                                        </Button>
+                                        <Button
+                                            onClick={() => { deletePicture(picture.id) }}
+                                            variant="dark"
+                                            style={{
+                                                float: 'right',
+                                                position: 'relative',
+                                                bottom: '25px',
+                                                padding: '5px'
+                                            }}
+                                        >
+                                            Edit
+                                        </Button>
                                     </Route>
                                 </Grid>
                             ))}
@@ -148,6 +141,29 @@ const Pictures = () => {
                     </Grid>
 
                 </Grid>
+
+                <Nav className="justify-content-center" style={{ fontSize: '1.25rem', }}>
+                    <Nav.Item>
+                        <Nav.Link onClick={() => openInNewTab('https://github.com/Dulaya/yourtube-playlist-client')} >
+                            Client Repo
+                    </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link onClick={() => openInNewTab('https://github.com/Dulaya/yourtube-playlist-server')} >
+                            Server Repo
+                    </Nav.Link>
+                    </Nav.Item>
+                </Nav>
+
+                <Navbar className="justify-content-center">
+                    <Nav >
+                        <Nav.Item >
+                            <Nav.Link onClick={() => openInNewTab('https://dulayasaennok.com')} >
+                                Made with MERN by Dulaya Saennok
+                        </Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </Navbar>
 
             </Router >}
         </>
