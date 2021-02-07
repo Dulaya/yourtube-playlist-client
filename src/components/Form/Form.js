@@ -45,9 +45,9 @@ const PictureForm = () => {
 
     return (
         <Container >
-            <Col lg='4' md='5' sm='12' style={{margin: '10px auto'}} >
+            <Col lg='4' md='5' sm='12' style={{ margin: '10px auto' }} >
 
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey="1">
 
                     <Card style={{ textAlign: 'center', padding: '10px', margin: '' }}>
 

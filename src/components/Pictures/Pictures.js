@@ -121,18 +121,6 @@ const Pictures = () => {
                                         >
                                             Delete
                                         </Button>
-                                        <Button
-                                            onClick={() => { deletePicture(picture.id) }}
-                                            variant="dark"
-                                            style={{
-                                                float: 'right',
-                                                position: 'relative',
-                                                bottom: '25px',
-                                                padding: '5px'
-                                            }}
-                                        >
-                                            Edit
-                                        </Button>
                                     </Route>
                                 </Grid>
                             ))}

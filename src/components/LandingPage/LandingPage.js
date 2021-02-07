@@ -23,6 +23,7 @@ const LandingPage = () => {
                 top: 0, 
                 width: '100vw',
                 fontStyle: 'italic',
+                color: '#dc3545',
             }}>
                 <Spinner animation="grow" size='sm' style={{ verticalAlign: 'middle', margin: '5px' }} />
                 Loading Playlists
