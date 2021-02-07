@@ -12,6 +12,7 @@ import { IoHome } from 'react-icons/io5';
 
 import { pictureURL } from '../../urls/urls';
 
+import Loader from '../Loader/Loader';
 import LandingPage from '../LandingPage/LandingPage';
 import PictureForm from '../Form/Form';
 import VideoForm from '../Form/Video';
@@ -40,7 +41,7 @@ const Pictures = () => {
 
     const [{ loading, error },] = useAxios(pictureURL);
 
-    if (loading) return <LandingPage />    /*<Loader />*/;
+    if (loading) return /*<LandingPage />*/    <Loader />;
     //if (error) return <p>Error!</p>;
 
     //Delete picture in the DOM based on ... & delete from database.
