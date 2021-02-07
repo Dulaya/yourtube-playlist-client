@@ -6,12 +6,6 @@ import Pictures from './components/Pictures/Pictures';
 import VideoeContext from './context/VideoContext';
 import PictureContext from './context/PictureContext';
 
-import LandingPage from './components/LandingPage/LandingPage';
-
-const getWidth = () => window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
-
 const App = () => {
 
     const [videos, updateVideos] = useState();

@@ -12,7 +12,6 @@ import { IoHome } from 'react-icons/io5';
 
 import { pictureURL } from '../../urls/urls';
 
-import Loader from '../Loader/Loader';
 import LandingPage from '../LandingPage/LandingPage';
 import PictureForm from '../Form/Form';
 import VideoForm from '../Form/Video';
